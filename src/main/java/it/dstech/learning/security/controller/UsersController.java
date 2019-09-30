@@ -6,18 +6,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import io.swagger.annotations.ApiOperation;
-import it.dstech.learning.security.interfaces.RoleService;
 import it.dstech.learning.security.interfaces.UserService;
 import it.dstech.learning.security.model.User;
 
 @RequestMapping("/user")
 @RestController
-public class RestControllerUsers {
+public class UsersController {
 	@Autowired
 	private UserService userService;
-
-	@Autowired
-	private RoleService roleService;
 
 	@ApiOperation(value = "Questo metodo serve per creare un utente di tipo GUEST")
 	@PostMapping(value = "/createGuest")
