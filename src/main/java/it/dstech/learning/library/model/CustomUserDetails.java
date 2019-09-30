@@ -1,4 +1,4 @@
-package it.dstech.learning.security.model;
+package it.dstech.learning.library.model;
 
 import java.util.Collection;
 import java.util.stream.Collectors;

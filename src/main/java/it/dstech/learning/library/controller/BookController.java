@@ -1,5 +1,6 @@
-package it.dstech.learning.security.controller;
+package it.dstech.learning.library.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,7 +12,8 @@ import io.swagger.annotations.ApiOperation;
 @RestController
 public class BookController {
 
-	@ApiOperation(value = "Questo metodo saprete usarlo tutti",notes = "Questa è una nota ad un metodo")
+//	@Autowired
+	@ApiOperation(value = "Questo metodo di accesso libero mi da la lista di tutti i libri")
 	@GetMapping
 	public String metodoAccessoLibero() {
 		return "Qui è facile arrivare....";

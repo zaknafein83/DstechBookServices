@@ -1,4 +1,4 @@
-package it.dstech.learning.security.service;
+package it.dstech.learning.library.service;
 
 import java.util.Optional;
 
@@ -8,9 +8,9 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import it.dstech.learning.security.model.CustomUserDetails;
-import it.dstech.learning.security.model.User;
-import it.dstech.learning.security.repository.UserRepository;
+import it.dstech.learning.library.model.CustomUserDetails;
+import it.dstech.learning.library.model.User;
+import it.dstech.learning.library.repository.UserRepository;
 
 @Service
 public class CustomUserDetailsService implements UserDetailsService{

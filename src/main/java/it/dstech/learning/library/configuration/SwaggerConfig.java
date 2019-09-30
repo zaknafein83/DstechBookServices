@@ -1,4 +1,4 @@
-package it.dstech.learning.security.configuration;
+package it.dstech.learning.library.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

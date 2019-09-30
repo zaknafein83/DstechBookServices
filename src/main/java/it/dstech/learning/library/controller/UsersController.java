@@ -1,4 +1,4 @@
-package it.dstech.learning.security.controller;
+package it.dstech.learning.library.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import io.swagger.annotations.ApiOperation;
-import it.dstech.learning.security.interfaces.UserService;
-import it.dstech.learning.security.model.User;
+import it.dstech.learning.library.model.User;
+import it.dstech.learning.library.service.interfaces.UserService;
 
 @RequestMapping("/user")
 @RestController

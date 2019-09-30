@@ -1,4 +1,4 @@
-package it.dstech.learning.utility;
+package it.dstech.learning.library.utility;
 
 public class Constants {
 

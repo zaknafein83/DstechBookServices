@@ -1,6 +1,6 @@
-package it.dstech.learning.security.interfaces;
+package it.dstech.learning.library.service.interfaces;
 
-import it.dstech.learning.security.model.User;
+import it.dstech.learning.library.model.User;
 
 public interface UserService {
 	

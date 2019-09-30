@@ -1,11 +1,11 @@
-package it.dstech.learning.security.service;
+package it.dstech.learning.library.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import it.dstech.learning.security.interfaces.RoleService;
-import it.dstech.learning.security.model.Role;
-import it.dstech.learning.security.repository.RoleRepository;
+import it.dstech.learning.library.model.Role;
+import it.dstech.learning.library.repository.RoleRepository;
+import it.dstech.learning.library.service.interfaces.RoleService;
 
 @Service
 public class RoleServiceImpl implements RoleService {

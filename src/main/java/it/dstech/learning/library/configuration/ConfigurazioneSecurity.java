@@ -1,4 +1,4 @@
-package it.dstech.learning.security.configuration;
+package it.dstech.learning.library.configuration;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
@@ -11,8 +11,8 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-import it.dstech.learning.security.repository.UserRepository;
-import it.dstech.learning.security.service.CustomUserDetailsService;
+import it.dstech.learning.library.repository.UserRepository;
+import it.dstech.learning.library.service.CustomUserDetailsService;
 
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 @EnableWebSecurity

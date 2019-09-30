@@ -1,10 +1,10 @@
-package it.dstech.learning.security.repository;
+package it.dstech.learning.library.repository;
 
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import it.dstech.learning.security.model.User;
+import it.dstech.learning.library.model.User;
 
 public interface UserRepository extends JpaRepository<User, Integer>{
 	
