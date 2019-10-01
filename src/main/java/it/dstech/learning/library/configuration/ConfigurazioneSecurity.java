@@ -2,7 +2,6 @@ package it.dstech.learning.library.configuration;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -11,17 +10,16 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-import it.dstech.learning.library.repository.UserRepository;
 import it.dstech.learning.library.service.CustomUserDetailsService;
+import it.dstech.learning.library.utility.Constants;
 
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 @EnableWebSecurity
-@EnableJpaRepositories(basePackageClasses = UserRepository.class)
 @Configuration
 public class ConfigurazioneSecurity extends WebSecurityConfigurerAdapter {
 
 	@Autowired
-	private CustomUserDetailsService userDetailsService;
+	private CustomUserDetailsService userDetailsService; 
 
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
@@ -32,11 +30,9 @@ public class ConfigurazioneSecurity extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 
-		http.csrf().disable();
-		http.authorizeRequests().antMatchers("**/auth").authenticated().anyRequest().permitAll().and().formLogin()
-				.permitAll();
+		http.authorizeRequests().antMatchers("/api").hasRole(Constants.ROLE_ADMIN).anyRequest().permitAll().and().formLogin()
+				.permitAll().defaultSuccessUrl("/success.html").and().csrf().disable();
 	}
-
 	private PasswordEncoder getPasswordEncoder() {
 		return new BCryptPasswordEncoder();
 	}

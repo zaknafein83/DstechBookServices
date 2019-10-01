@@ -13,19 +13,15 @@ import it.dstech.learning.library.model.User;
 import it.dstech.learning.library.repository.UserRepository;
 
 @Service
-public class CustomUserDetailsService implements UserDetailsService{
+public class CustomUserDetailsService implements UserDetailsService {
 
-	
 	@Autowired
 	private UserRepository usersRepository;
-	
-	
-    @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        Optional<User> optionalUsers = usersRepository.findByName(username);
-        optionalUsers
-                .orElseThrow(() -> new UsernameNotFoundException("Username not found"));
-        return optionalUsers
-                .map(CustomUserDetails::new).get();
-    }
+
+	@Override
+	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+		Optional<User> optionalUsers = usersRepository.findByName(username);
+		optionalUsers.orElseThrow(() -> new UsernameNotFoundException("Username not found"));
+		return optionalUsers.map(CustomUserDetails::new).get();
+	}
 }

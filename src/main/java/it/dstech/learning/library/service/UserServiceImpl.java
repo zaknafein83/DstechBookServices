@@ -4,6 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import it.dstech.learning.library.model.Role;
@@ -24,6 +25,9 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public User createUser(User user) {
+		String encryptPassword = user.getPassword();
+		BCryptPasswordEncoder bc = new BCryptPasswordEncoder();
+		user.setPassword(bc.encode(encryptPassword));
 		Set<Role> roles = new HashSet<Role>();
 		Role roleGuest = roleService.getRole(Constants.ROLE_ADMIN);
 		roles.add(roleGuest);
@@ -33,6 +37,9 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public User createGuestUser(User user) {
+		String encryptPassword = user.getPassword();
+		BCryptPasswordEncoder bc = new BCryptPasswordEncoder();
+		user.setPassword(bc.encode(encryptPassword));
 		Set<Role> roles = new HashSet<Role>();
 		Role roleGuest = roleService.getRole(Constants.ROLE_GUEST);
 		roles.add(roleGuest);
